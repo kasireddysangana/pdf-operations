@@ -1,59 +1,62 @@
 package com.itworks.pdfoperations.model;
 
+import com.itextpdf.text.BaseColor;
+import com.itextpdf.text.Font;
+
 public class ServiceRequestDetails {
     private double amountPaid;
-    private double balanceAmount;
     private String doctorName;
     private String serviceName;
-    private String serviceNameColor;
+    private BaseColor serviceNameColor;
     private String serviceRequestDate;
-    private double totalAmount;
-    private double totalDiscount;
+    private double unitCost;
+    private int quantity;
+    private double discountAmount;
 
     @Override
     public String toString() {
         return "ServiceRequestDetails{" +
-                "amountPaid=" + amountPaid +
-                ", balanceAmount=" + balanceAmount +
+                ", amountPaid=" + amountPaid +
                 ", doctorName='" + doctorName + '\'' +
                 ", serviceName='" + serviceName + '\'' +
                 ", serviceNameColor='" + serviceNameColor + '\'' +
                 ", serviceRequestDate='" + serviceRequestDate + '\'' +
-                ", totalAmount=" + totalAmount +
-                ", totalDiscount=" + totalDiscount +
+                ", unitCost=" + unitCost +
+                ", quantity=" + quantity +
+                ", discountAmount=" + discountAmount +
                 '}';
     }
 
-    public double getTotalAmount() {
-        return totalAmount;
+    public int getQuantity() {
+        return quantity;
     }
 
-    public void setTotalAmount(double totalAmount) {
-        this.totalAmount = totalAmount;
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
-    public double getTotalDiscount() {
-        return totalDiscount;
+    public double getUnitCost() {
+        return unitCost;
     }
 
-    public void setTotalDiscount(double totalDiscount) {
-        this.totalDiscount = totalDiscount;
+    public void setUnitCost(double unitCost) {
+        this.unitCost = unitCost;
     }
 
-    public double getAmountpaid() {
+    public double getDiscountAmount() {
+        return discountAmount;
+    }
+
+    public void setDiscountAmount(double discountAmount) {
+        this.discountAmount = discountAmount;
+    }
+
+    public double getAmountPaid() {
         return amountPaid;
     }
 
-    public void setAmountPaid(double amountpaid) {
-        this.amountPaid = amountpaid;
-    }
-
-    public double getBalanceAmount() {
-        return balanceAmount;
-    }
-
-    public void setBalanceAmount(double balanceAmount) {
-        this.balanceAmount = balanceAmount;
+    public void setAmountPaid(double amountPaid) {
+        this.amountPaid = amountPaid;
     }
 
     public String getDoctorName() {
@@ -72,11 +75,11 @@ public class ServiceRequestDetails {
         this.serviceName = serviceName;
     }
 
-    public String getServiceNameColor() {
+    public BaseColor getServiceNameColor() {
         return serviceNameColor;
     }
 
-    public void setServiceNameColor(String serviceNameColor) {
+    public void setServiceNameColor(BaseColor serviceNameColor) {
         this.serviceNameColor = serviceNameColor;
     }
 

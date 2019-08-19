@@ -4,7 +4,7 @@ public class LocationDetails {
  private String locationAddress;
  private String locationName;
  private String locationNumber;
- private String locationImagePath;
+ private String locationHeaderPath;
 
  @Override
  public String toString() {
@@ -12,8 +12,16 @@ public class LocationDetails {
           "locationAddress='" + locationAddress + '\'' +
           ", locationName='" + locationName + '\'' +
           ", locationNumber='" + locationNumber + '\'' +
-          ", locationImagePath='" + locationImagePath + '\'' +
+          ", locationHeaderPath='" + locationHeaderPath + '\'' +
           '}';
+ }
+
+ public String getLocationHeaderPath() {
+  return locationHeaderPath;
+ }
+
+ public void setLocationHeaderPath(String locationHeaderPath) {
+  this.locationHeaderPath = locationHeaderPath;
  }
 
  public String getLocationAddress() {
@@ -40,11 +48,5 @@ public class LocationDetails {
   this.locationNumber = locationNumber;
  }
 
- public String getLocationImagePath() {
-  return locationImagePath;
- }
 
- public void setLocationImagePath(String locationImagePath) {
-  this.locationImagePath = locationImagePath;
- }
 }

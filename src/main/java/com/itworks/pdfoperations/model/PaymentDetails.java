@@ -7,6 +7,7 @@ public class PaymentDetails {
     private double paymentAmount;
     private String paymentDate;
     private String paymentMethod;
+    private String receiptNumber;
 
     @Override
     public String toString() {
@@ -14,7 +15,16 @@ public class PaymentDetails {
                 "paymentAmount=" + paymentAmount +
                 ", paymentDate='" + paymentDate + '\'' +
                 ", paymentMethod='" + paymentMethod + '\'' +
+                ", receiptNumber='" + receiptNumber + '\'' +
                 '}';
+    }
+
+    public String getReceiptNumber() {
+        return receiptNumber;
+    }
+
+    public void setReceiptNumber(String receiptNumber) {
+        this.receiptNumber = receiptNumber;
     }
 
     public double getPaymentAmount() {

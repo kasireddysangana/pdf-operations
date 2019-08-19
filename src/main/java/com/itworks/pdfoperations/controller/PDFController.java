@@ -6,13 +6,12 @@ import com.itworks.pdfoperations.model.MainInvoice;
 import com.itworks.pdfoperations.pojo.Response;
 import com.itworks.pdfoperations.service.PDFService;
 
-import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.*;
-import javax.mail.*;
+
 import javax.validation.Valid;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
@@ -23,10 +22,11 @@ public class PDFController {
     private Logger logger = LoggerFactory.getLogger(PDFController.class);
 
     @Autowired
-    Environment environment;
+    private Environment environment;
 
     @Autowired
-    PDFService pdfService;
+    private PDFService pdfService;
+
     @Produces(MediaType.APPLICATION_JSON)
     @RequestMapping(value = "/api/invoice/pdf", method = RequestMethod.POST)
     public Response generatePDF(@Valid @RequestBody String request) {
@@ -51,20 +51,15 @@ public class PDFController {
         try {
             String message = pdfService.generatePDF(invoice);
             String []messageParts = message.split(";");
-            System.out.println("Complete message : " + message);
 
             responseCode = 200;
             responseMessage =messageParts[0];
             pdfPath = messageParts[1];
-            System.out.println("message 1 : " + responseMessage);
-            System.out.println("message 2 : " + pdfPath);
         }catch (IOException e) {
             logger.error("IOException");
             e.printStackTrace();
         }catch (DocumentException e) {
             logger.error("DocumentException");
-            e.printStackTrace();
-        } catch (MessagingException e) {
             e.printStackTrace();
         }
 
@@ -74,4 +69,4 @@ public class PDFController {
         return new Response(responseCode, responseMessage, pdfPath);
     }
 
-  }
+}

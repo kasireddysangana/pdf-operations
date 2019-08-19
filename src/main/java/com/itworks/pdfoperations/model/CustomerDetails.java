@@ -13,12 +13,13 @@ public class CustomerDetails {
  private int customerId;
  @NotNull(message = "Customer Name can not be blank")
  private String customerName;
+ private String customerAddress;
  @NotNull(message = "Customer Phone can not be blank")
  private String customerPhoneNumber;
  @NotNull(message = "Customer Email can not be blank")
  private String customerEmail;
 
- List< ServiceRequestDetails > serviceRequestDetails = new ArrayList < ServiceRequestDetails > ();
+ private List< ServiceRequestDetails > serviceRequestDetails = new ArrayList <> ();
 
  public List<ServiceRequestDetails> getServiceRequestDetails() {
   return serviceRequestDetails;
@@ -32,6 +33,7 @@ public class CustomerDetails {
           ", customerGender='" + customerGender + '\'' +
           ", customerId=" + customerId +
           ", customerName='" + customerName + '\'' +
+          ", customerAddress='" + customerAddress + '\'' +
           ", customerPhoneNumber='" + customerPhoneNumber + '\'' +
           ", customerEmail='" + customerEmail + '\'' +
           ", serviceRequestDetails=" + serviceRequestDetails +
@@ -41,6 +43,14 @@ public class CustomerDetails {
 
  // Getter Methods
 
+
+ public String getCustomerAddress() {
+  return customerAddress;
+ }
+
+ public void setCustomerAddress(String customerAddress) {
+  this.customerAddress = customerAddress;
+ }
 
  public String getCustomerEmail() {
   return customerEmail;

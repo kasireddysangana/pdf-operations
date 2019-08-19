@@ -3,13 +3,15 @@ package com.itworks.pdfoperations.model;
 import java.util.ArrayList;
 
 public class InvoiceDetails {
- private float invoiceBalanceAmount;
+ private Double invoiceBalanceAmount;
  private CustomerDetails customerDetails;
  private LocationDetails locationDetails;
- ArrayList< PaymentDetails > paymentDetails = new ArrayList < PaymentDetails > ();
- private float totalAmountPaid;
- private float totalDiscountAmount;
- private float totalInvoiceAmount;
+ private ArrayList< PaymentDetails > paymentDetails = new ArrayList <> ();
+ private Double totalAmountPaid;
+ private Double totalDiscountAmount;
+ private Double totalInvoiceAmount;
+ private String invoiceDate;
+ private String invoiceNumber;
 
  @Override
  public String toString() {
@@ -21,17 +23,35 @@ public class InvoiceDetails {
           ", totalAmountPaid=" + totalAmountPaid +
           ", totalDiscountAmount=" + totalDiscountAmount +
           ", totalInvoiceAmount=" + totalInvoiceAmount +
+          ", invoiceDate='" + invoiceDate + '\'' +
+          ", invoiceNumber='" + invoiceNumber + '\'' +
           '}';
  }
 
  // Getter Methods
 
 
- public float getInvoiceBalanceAmount() {
+    public String getInvoiceNumber() {
+        return invoiceNumber;
+    }
+
+    public void setInvoiceNumber(String invoiceNumber) {
+        this.invoiceNumber = invoiceNumber;
+    }
+
+    public String getInvoiceDate() {
+        return invoiceDate;
+    }
+
+    public void setInvoiceDate(String invoiceDate) {
+        this.invoiceDate = invoiceDate;
+    }
+
+    public Double getInvoiceBalanceAmount() {
   return invoiceBalanceAmount;
  }
 
- public void setInvoiceBalanceAmount(float invoiceBalanceAmount) {
+ public void setInvoiceBalanceAmount(Double invoiceBalanceAmount) {
   this.invoiceBalanceAmount = invoiceBalanceAmount;
  }
 
@@ -59,27 +79,27 @@ public class InvoiceDetails {
   this.paymentDetails = paymentDetails;
  }
 
- public float getTotalAmountPaid() {
+ public Double getTotalAmountPaid() {
   return totalAmountPaid;
  }
 
- public void setTotalAmountPaid(float totalAmountPaid) {
+ public void setTotalAmountPaid(Double totalAmountPaid) {
   this.totalAmountPaid = totalAmountPaid;
  }
 
- public float getTotalDiscountAmount() {
+ public Double getTotalDiscountAmount() {
   return totalDiscountAmount;
  }
 
- public void setTotalDiscountAmount(float totalDiscountAmount) {
+ public void setTotalDiscountAmount(Double totalDiscountAmount) {
   this.totalDiscountAmount = totalDiscountAmount;
  }
 
- public float getTotalInvoiceAmount() {
+ public Double getTotalInvoiceAmount() {
   return totalInvoiceAmount;
  }
 
- public void setTotalInvoiceAmount(float totalInvoiceAmount) {
+ public void setTotalInvoiceAmount(Double totalInvoiceAmount) {
   this.totalInvoiceAmount = totalInvoiceAmount;
  }
 }
